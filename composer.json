@@ -1,0 +1,54 @@
+{
+    "name": "kiiya/ussd-menu-builder",
+    "description": "Compose USSD menus in php, compatible with Africastalking and Hubtel APIs",
+    "keywords": [
+        "kiiya",
+        "ussd-menu-builder"
+    ],
+    "homepage": "https://github.com/kiiya/ussd-menu-builder",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Erick Kiiya",
+            "email": "kiiyaerick@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kiiya\\UssdMenuBuilder\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kiiya\\UssdMenuBuilder\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kiiya\\UssdMenuBuilder\\UssdMenuBuilderServiceProvider"
+            ],
+            "aliases": {
+                "UssdMenuBuilder": "Kiiya\\UssdMenuBuilder\\UssdMenuBuilderFacade"
+            }
+        }
+    }
+}
